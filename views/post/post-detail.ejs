@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <h1>Post Details</h1>
+  Title:<%=post.Title %><p>
+  Content:<%=post.Content %><p>
+  Author Name:<%=post.Author.name %><p>
+  Author Email:<%=post.Author.email %><p>
+
+  <a href="/posts/postupdate/<%= post._id%>"><button type="button" name="button">Update</button></a>
+  <button type="button" name="button" onclick="del();">Delete</button>
+  </body>
+  <script type="text/javascript">
+    function del(){
+      var a = confirm('Are you sure for delete!');
+      if(a){
+        location.href="/posts/postdelete/<%= post._id %>"
+      }
+    }
+  </script>
+</html>
